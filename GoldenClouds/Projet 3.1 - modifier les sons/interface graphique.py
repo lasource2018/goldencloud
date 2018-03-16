@@ -151,12 +151,15 @@ def mainloop(screen):
 #notes blanches
          
          if event.key == K_q:
+            do.stop()
             pygame.draw.rect(screen, WHITE, (50, 50, 70, 200), 0)#DO
             pygame.display.flip()
          if event.key == K_w:
+            re.stop()
             pygame.draw.rect(screen, WHITE, (125, 50, 70, 200), 0)#RE
             pygame.display.flip()
          if event.key == K_e:
+            mi.stop()
             pygame.draw.rect(screen, WHITE, (200, 50, 70, 200), 0)  #MI
             pygame.display.flip()
          if event.key == K_r:
