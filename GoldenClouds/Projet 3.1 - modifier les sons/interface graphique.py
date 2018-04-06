@@ -165,57 +165,74 @@ def mainloop(screen):
             pygame.draw.rect(screen, WHITE, (200, 50, 70, 200), 0)  #MI
             pygame.display.flip()
          if event.key == K_r:
+            fa.stop()
             pygame.draw.rect(screen, WHITE, (275, 50, 70, 200), 0)  #FA
             pygame.display.flip()
          if event.key == K_t:
+            sol.stop()
             pygame.draw.rect(screen, WHITE, (350, 50, 70, 200), 0)  #SOL
             pygame.display.flip()
          if event.key == K_y:
+            la.stop()
             pygame.draw.rect(screen, WHITE, (425, 50, 70, 200), 0)  #LA
             pygame.display.flip()
          if event.key == K_u:
+            si.stop()
             pygame.draw.rect(screen, WHITE, (500, 50, 70, 200), 0)  #SI
             pygame.display.flip()
          if event.key == K_i:
+            do2.stop()
             pygame.draw.rect(screen, WHITE, (575, 50, 70, 200), 0)  #DO2
             pygame.display.flip()
          if event.key == K_o:
+            re2.stop()
             pygame.draw.rect(screen, WHITE, (650, 50, 70, 200), 0)  #RE2
             pygame.display.flip()
          if event.key == K_p:
+            mi2.stop()
             pygame.draw.rect(screen, WHITE, (725, 50, 70, 200), 0)  #MI2
             pygame.display.flip()
          if event.key == K_LEFTBRACKET:
+            fa2.stop()
             pygame.draw.rect(screen, WHITE, (800, 50, 70, 200), 0)  #FA2
             pygame.display.flip()
          if event.key == K_RIGHTBRACKET:
+            sol2.stop()
             pygame.draw.rect(screen, WHITE, (875, 50, 70, 200), 0)  #SOL2
             pygame.display.flip()
 
 #notes noires
             
          if event.key == K_2:
+            reb.stop()
             pygame.draw.rect(screen, BLACK, (100, 50, 40, 150), 0)  #REb
             pygame.display.update()
-         if event.key == K_3:   
+         if event.key == K_3:
+            mib.stop()
             pygame.draw.rect(screen, BLACK, (175, 50, 40, 150), 0)  #MIb
             pygame.display.flip()
          if event.key == K_5:
+            solb.stop()
             pygame.draw.rect(screen, BLACK, (325, 50, 40, 150), 0)  #SOLb
             pygame.display.flip()
          if event.key == K_6:
+            lab.stop()
             pygame.draw.rect(screen, BLACK, (400, 50, 40, 150), 0)  #LAb
             pygame.display.flip()
          if event.key == K_7:
+            sib.stop()
             pygame.draw.rect(screen, BLACK, (475, 50, 40, 150), 0)  #SIb
             pygame.display.flip()
          if event.key == K_9:
+            re2b.stop()
             pygame.draw.rect(screen, BLACK, (625, 50, 40, 150), 0)  #RE2b
             pygame.display.flip()
          if event.key == K_0:
+            mi2b.stop()
             pygame.draw.rect(screen, BLACK, (700, 50, 40, 150), 0)  #MI2b
             pygame.display.flip()
          if event.key == K_EQUALS:
+            sol2b.stop()
             pygame.draw.rect(screen, BLACK, (850, 50, 40, 150), 0)  #SOL2b
             pygame.display.flip()
             
