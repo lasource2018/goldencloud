@@ -1,9 +1,7 @@
 import pygame                    #on importe les bibliothèques
 from pygame.locals import *
 
-pygame.mixer.pre_init(44100, -16, 2, 4096)  #pre_init(frequency=22050, size=-16, channels=2, buffersize=4096)réduire le temps de latence
-#pygame.mixer.fadeout(50)   #temps du fadeout en millisec (valeur aléatoire)
-#pygame.mixer.set_volume() entre 0 et 1 (à tester)
+pygame.mixer.init(44100, -16, 2, 4096)  #pre_init(frequency=22050, size=-16, channels=2, buffersize=4096)réduire le temps de latence
 
 pygame.init()  #on initialise pygame
 
@@ -49,6 +47,7 @@ def main():
    screen = pygame.display.set_mode((WIDTH, HEIGHT))
    screen.fill(Fond)
    mainloop(screen)
+   modifsons()
 
 def mainloop(screen):
    running = True
@@ -242,6 +241,8 @@ def mainloop(screen):
             pygame.draw.rect(screen, BLACK, (850, 50, 40, 150), 0)  #SOL2b
             pygame.display.flip()
             
+def modifsons():
+    listesons = [do, reb, re, mib, mi, fa, sol, solb, la, si, do2, 
 
 main()
 
