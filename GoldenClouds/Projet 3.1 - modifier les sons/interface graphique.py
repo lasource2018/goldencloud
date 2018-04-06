@@ -23,26 +23,26 @@ icon_32x32 = pygame.image.load("images/background.jpg")
 pygame.display.set_icon(icon_32x32)
 
 #sons des notes
-do = pygame.mixer.Sound("sons\\1DO_-_A.wav")
-reb = pygame.mixer.Sound("sons\\2Reb_-_é.wav")
-re = pygame.mixer.Sound("sons\\3R_-_Z.wav")
-mib = pygame.mixer.Sound("sons\\4Mib_-__.wav")
-mi = pygame.mixer.Sound("sons\\5Mi_-_E.wav")
-fa = pygame.mixer.Sound("sons\\6Fa_-_R.wav")
-solb = pygame.mixer.Sound("sons\\7solb-_).wav")
-sol = pygame.mixer.Sound("sons\\8Sol_-_T.wav")
-lab = pygame.mixer.Sound("sons\\9Lab_-_G_ou_§T.wav")
-la = pygame.mixer.Sound("sons\\10La-_Y.wav")
-sib = pygame.mixer.Sound("sons\\11Sib_-_è.wav")
-si = pygame.mixer.Sound("sons\\12Si_-_U.wav")
-do2 = pygame.mixer.Sound("sons\\13Do2_-_I.wav")
-re2 = pygame.mixer.Sound("sons\\14Re2-_O.wav")
-re2b = pygame.mixer.Sound("sons\\15Ré2b_-_ç.wav")
-mi2 = pygame.mixer.Sound("sons\\16Mi2_-_P.wav")
-mi2b = pygame.mixer.Sound("sons\\17Mi2b_-_à.wav")
-fa2 = pygame.mixer.Sound("sons\\18Fa2_-_¨.wav")
-sol2 = pygame.mixer.Sound("sons\\19Sol2-$.wav")
-sol2b = pygame.mixer.Sound("sons\\20Sol2b-=ou-.wav")
+do = pygame.mixer.Sound("sons/1DO_-_A.wav")
+reb = pygame.mixer.Sound("sons/2Reb_-_é.wav")
+re = pygame.mixer.Sound("sons/3R_-_Z.wav")
+mib = pygame.mixer.Sound("sons/4Mib_-__.wav")
+mi = pygame.mixer.Sound("sons/5Mi_-_E.wav")
+fa = pygame.mixer.Sound("sons/6Fa_-_R.wav")
+solb = pygame.mixer.Sound("sons/7solb-_).wav")
+sol = pygame.mixer.Sound("sons/8Sol_-_T.wav")
+lab = pygame.mixer.Sound("sons/9Lab_-_G_ou_§T.wav")
+la = pygame.mixer.Sound("sons/10La-_Y.wav")
+sib = pygame.mixer.Sound("sons/11Sib_-_è.wav")
+si = pygame.mixer.Sound("sons/12Si_-_U.wav")
+do2 = pygame.mixer.Sound("sons/13Do2_-_I.wav")
+re2 = pygame.mixer.Sound("sons/14Re2-_O.wav")
+re2b = pygame.mixer.Sound("sons/15Ré2b_-_ç.wav")
+mi2 = pygame.mixer.Sound("sons/16Mi2_-_P.wav")
+mi2b = pygame.mixer.Sound("sons/17Mi2b_-_à.wav")
+fa2 = pygame.mixer.Sound("sons/18Fa2_-_¨.wav")
+sol2 = pygame.mixer.Sound("sons/19Sol2-$.wav")
+sol2b = pygame.mixer.Sound("sons/20Sol2b-=ou-.wav")
 
 def main():
    pygame.init()
@@ -73,7 +73,8 @@ def mainloop(screen):
             pygame.display.flip()
          if event.key == K_w:
             re.play()
-            pygame.draw.rect(screen, LIGHTGREY, (125, 50, 70, 200), 0)#RE
+            pygame.draw.rect(screen, LIGHTGREY, (140, 50, 50, 150), 0)#RE
+            pygame.draw.rect(screen, LIGHTGREY, (125, 200, 70,50),0)#RE
             pygame.display.flip()
          if event.key == K_e:
             mi.play()
@@ -162,7 +163,8 @@ def mainloop(screen):
             pygame.display.flip()
          if event.key == K_w:
             re.stop()
-            pygame.draw.rect(screen, WHITE, (125, 50, 70, 200), 0)#RE
+            pygame.draw.rect(screen, LIGHTGREY, (140, 50, 50, 150), 0)#RE
+            pygame.draw.rect(screen, LIGHTGREY, (125, 200, 70,50),0)#RE
             pygame.display.flip()
          if event.key == K_e:
             mi.stop()
@@ -242,3 +244,4 @@ def mainloop(screen):
             
 
 main()
+
