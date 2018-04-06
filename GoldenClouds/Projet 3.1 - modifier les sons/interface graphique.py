@@ -19,7 +19,7 @@ Fond = (223,210,220)
  
 #titre de la fenetre et image
 pygame.display.set_caption("GoldenCloud")
-icon_32x32 = pygame.image.load("images\\background.jpg")
+icon_32x32 = pygame.image.load("images/background.jpg")
 pygame.display.set_icon(icon_32x32)
 
 #sons des notes
