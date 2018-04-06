@@ -1,7 +1,9 @@
 import pygame                    #on importe les bibliothèques
 from pygame.locals import *
 
-pygame.mixer.pre_init(44100, -16, 2, 4096)      #pre_init(frequency=22050, size=-16, channels=2, buffersize=4096)réduire le temps de latence
+pygame.mixer.pre_init(44100, -16, 2, 4096)  #pre_init(frequency=22050, size=-16, channels=2, buffersize=4096)réduire le temps de latence
+#pygame.mixer.fadeout(50)   #temps du fadeout en millisec (valeur aléatoire)
+#pygame.mixer.set_volume() entre 0 et 1 (à tester)
 
 pygame.init()  #on initialise pygame
 
@@ -52,7 +54,7 @@ def mainloop(screen):
    running = True
 
    while running == True:
-              #pygame.draw.rect(screen, COULEUR, (x, y, longueur, hauteur)
+      #pygame.draw.rect(screen, COULEUR, (x, y, longueur, hauteur)
       #ancienne place du clavier 
       
       for event in pygame.event.get() :
@@ -66,7 +68,8 @@ def mainloop(screen):
 
          if event.key == K_q: #on met “z” car pygame code en qwerty, cela équivaut donc à “a” sur notre clavier
             do.play()
-            pygame.draw.rect(screen, LIGHTGREY, (50, 50, 70, 200), 0)#DO
+            pygame.draw.rect(screen, LIGHTGREY, (50, 50, 50, 150), 0)#DO
+            pygame.draw.rect(screen, LIGHTGREY, (50, 200, 70, 50), 0)#DO
             pygame.display.flip()
          if event.key == K_w:
             re.play()
@@ -154,7 +157,8 @@ def mainloop(screen):
          
          if event.key == K_q:
             do.stop()
-            pygame.draw.rect(screen, WHITE, (50, 50, 70, 200), 0)#DO
+            pygame.draw.rect(screen, WHITE, (50, 50, 50, 150), 0)#DO
+            pygame.draw.rect(screen, WHITE, (50, 200, 70, 50), 0)#DO
             pygame.display.flip()
          if event.key == K_w:
             re.stop()
