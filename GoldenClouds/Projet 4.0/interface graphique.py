@@ -1,9 +1,7 @@
 import pygame                    #on importe les bibliothèques
 from pygame.locals import *
 
-pygame.mixer.pre_init(44100, -16, 2, 4096)  #pre_init(frequency=22050, size=-16, channels=2, buffersize=4096)réduire le temps de latence
-#pygame.mixer.fadeout(50)   #temps du fadeout en millisec (valeur aléatoire)
-#pygame.mixer.set_volume() entre 0 et 1 (à tester)
+pygame.mixer.init(44100, -16, 2, 4096)  #pre_init(frequency=22050, size=-16, channels=2, buffersize=4096)réduire le temps de latence
 
 pygame.init()  #on initialise pygame
 
@@ -44,11 +42,6 @@ fa2 = pygame.mixer.Sound("sons/18Fa2_-_¨.wav")
 sol2 = pygame.mixer.Sound("sons/19Sol2-$.wav")
 sol2b = pygame.mixer.Sound("sons/20Sol2b-=ou-.wav")
 
-def main():
-   pygame.init()
-   screen = pygame.display.set_mode((WIDTH, HEIGHT))
-   screen.fill(Fond)
-   mainloop(screen)
 
 def mainloop(screen):
    running = True
@@ -73,7 +66,7 @@ def mainloop(screen):
             pygame.display.flip()
          if event.key == K_w:
             re.play()
-            pygame.draw.rect(screen, LIGHTGREY, (140, 50, 50, 150), 0)#RE
+            pygame.draw.rect(screen, LIGHTGREY, (140, 50, 35, 150), 0)#RE
             pygame.draw.rect(screen, LIGHTGREY, (125, 200, 70,50),0)#RE
             pygame.display.flip()
          if event.key == K_e:
@@ -163,8 +156,8 @@ def mainloop(screen):
             pygame.display.flip()
          if event.key == K_w:
             re.stop()
-            pygame.draw.rect(screen, LIGHTGREY, (140, 50, 50, 150), 0)#RE
-            pygame.draw.rect(screen, LIGHTGREY, (125, 200, 70,50),0)#RE
+            pygame.draw.rect(screen, WHITE, (140, 50, 35, 150), 0)#RE
+            pygame.draw.rect(screen, WHITE, (125, 200, 70,50),0)#RE
             pygame.display.flip()
          if event.key == K_e:
             mi.stop()
@@ -243,5 +236,9 @@ def mainloop(screen):
             pygame.display.flip()
             
 
-main()
+pygame.init()
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+screen.fill(Fond)
+mainloop(screen)
+modifsons()
 
