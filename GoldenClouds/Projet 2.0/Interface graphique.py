@@ -49,27 +49,7 @@ def main():
 
 def mainloop(screen):
    running = True
-   pygame.draw.rect(screen, WHITE, (50, 50, 70, 200), 0)   #DO
-   pygame.draw.rect(screen, WHITE, (125, 50, 70, 200), 0)  #RE
-   pygame.draw.rect(screen, WHITE, (200, 50, 70, 200), 0)  #MI
-   pygame.draw.rect(screen, WHITE, (275, 50, 70, 200), 0)  #FA
-   pygame.draw.rect(screen, WHITE, (350, 50, 70, 200), 0)  #SOL
-   pygame.draw.rect(screen, WHITE, (425, 50, 70, 200), 0)  #LA
-   pygame.draw.rect(screen, WHITE, (500, 50, 70, 200), 0)  #SI
-   pygame.draw.rect(screen, WHITE, (575, 50, 70, 200), 0)  #DO2
-   pygame.draw.rect(screen, WHITE, (650, 50, 70, 200), 0)  #RE2
-   pygame.draw.rect(screen, WHITE, (725, 50, 70, 200), 0)  #MI2
-   pygame.draw.rect(screen, WHITE, (800, 50, 70, 200), 0)  #FA2
-   pygame.draw.rect(screen, WHITE, (875, 50, 70, 200), 0)  #SOL2
-   pygame.draw.rect(screen, BLACK, (100, 50, 40, 150), 0)  #REb
-   pygame.draw.rect(screen, BLACK, (175, 50, 40, 150), 0)  #MIb
-   pygame.draw.rect(screen, BLACK, (325, 50, 40, 150), 0)  #SOLb
-   pygame.draw.rect(screen, BLACK, (400, 50, 40, 150), 0)  #LAb
-   pygame.draw.rect(screen, BLACK, (475, 50, 40, 150), 0)  #SIb
-   pygame.draw.rect(screen, BLACK, (625, 50, 40, 150), 0)  #RE2b
-   pygame.draw.rect(screen, BLACK, (700, 50, 40, 150), 0)  #MI2b
-   pygame.draw.rect(screen, BLACK, (850, 50, 40, 150), 0)  #SOL2b
-   pygame.display.update()
+   
    while running == True:
               #pygame.draw.rect(screen, COULEUR, (x, y, longueur, hauteur)
       pygame.draw.rect(screen, WHITE, (50, 50, 70, 200), 0)   #DO

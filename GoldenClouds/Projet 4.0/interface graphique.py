@@ -42,14 +42,34 @@ fa2 = pygame.mixer.Sound("sons/18Fa2_-_¨.wav")
 sol2 = pygame.mixer.Sound("sons/19Sol2-$.wav")
 sol2b = pygame.mixer.Sound("sons/20Sol2b-=ou-.wav")
 
+def main ():
+   pygame.init()
+   screen = pygame.display.set_mode((WIDTH, HEIGHT))
+   screen.fill(Fond)
+   mainloop(screen)
 
+def creaTexteObj(texte, Police):
+   texteSurface = Police.render(texte, True, WHITE)
+   return texteSurface, texteSurface.get_rect()
+   
+def message ():
+   Grostexte = pygame.font.Font('BradBunR.ttf', 150)
+   Petittexte = pygame.font.Font('BradBunR.ttf', 20)
+
+   GrostexteSurf, GrostexteRect = creaTexteObj("Bienvenu !", GrosTexte)
+   PetittexteSurf, PetittexteRect = creaTexteObj("Appuyez sur une touche pour découvrir votre clavier...", PetitTexte)
+
+   GrostexteRect = pygame.draw.rect(screen, WHITE, (250, 400, 150, 100), 0)   
+
+   pygame.display.update()
+   
 def mainloop(screen):
    running = True
-
+   
+   pygame.display.update()
    while running == True:
-      #pygame.draw.rect(screen, COULEUR, (x, y, longueur, hauteur)
-      #ancienne place du clavier 
-      
+      #pygame.draw.rect(screen, COULEUR, (x, y, longueur, hauteur) 
+
       for event in pygame.event.get() :
          if event.type == QUIT: 
             pygame.quit()
@@ -235,10 +255,7 @@ def mainloop(screen):
             pygame.draw.rect(screen, BLACK, (850, 50, 40, 150), 0)  #SOL2b
             pygame.display.flip()
             
+main ()
 
-pygame.init()
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-screen.fill(Fond)
-mainloop(screen)
-modifsons()
+
 
