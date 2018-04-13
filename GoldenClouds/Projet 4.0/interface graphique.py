@@ -42,17 +42,42 @@ fa2 = pygame.mixer.Sound("sons/18Fa2_-_¨.wav")
 sol2 = pygame.mixer.Sound("sons/19Sol2-$.wav")
 sol2b = pygame.mixer.Sound("sons/20Sol2b-=ou-.wav")
 
+def creaTexteObj(texte, Police):
+   texteSurface = Police.render(texte, True, WHITE)
+   return texteSurface, texteSurface.get_rect()
+   
+def message(texte):
+   #on établit les polices d'écriture
+   GrosTexte = pygame.font.Font('police/BradBunR.ttf', 150)
+   PetitTexte = pygame.font.Font('police/BradBunR.ttf', 20)
 
+   GrosTexteSurf, GrosTexteRect = creaTexteObj(texte, GrosTexte)
+   GrosTexteRect.center = WIDTH/2, ((HEIGHT/2)-50)
+   screen.blit(GrosTexteSurf, GrosTexteRect)
+   
+   PetitTexteSurf, PetitTexteRect = creaTexteObj("Appuyez sur une touche pour découvrir votre clavier...", PetitTexte)
+   PetitTexteRect.center = WIDTH/2, ((HEIGHT/2)+50)
+   screen.blit(PetitTexteSurf, PetitTexteRect)
+   
+   pygame.display.update()
+
+def affichageTexte():
+   message('Bienvenu!')
+   
 def mainloop(screen):
    running = True
-
+   
+   pygame.display.update()
    while running == True:
       #pygame.draw.rect(screen, COULEUR, (x, y, longueur, hauteur)
-      #ancienne place du clavier 
       
       for event in pygame.event.get() :
          if event.type == QUIT: 
             pygame.quit()
+
+
+      affichageTexte()
+
             
       #lorsqu'on appuie sur une touche
       if event.type == KEYDOWN:
@@ -240,5 +265,5 @@ pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 screen.fill(Fond)
 mainloop(screen)
-modifsons()
+
 
