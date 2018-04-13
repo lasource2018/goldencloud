@@ -48,15 +48,15 @@ def creaTexteObj(texte, Police):
    
 def message(texte):
    #on établit les polices d'écriture
-   GrosTexte = pygame.font.Font('police/BradBunR.ttf', 150)
+   GrosTexte = pygame.font.Font('police/BradBunR.ttf', 130)
    PetitTexte = pygame.font.Font('police/BradBunR.ttf', 20)
 
    GrosTexteSurf, GrosTexteRect = creaTexteObj(texte, GrosTexte)
-   GrosTexteRect.center = WIDTH/2, ((HEIGHT/2)-50)
+   GrosTexteRect.center = 750, 400
    screen.blit(GrosTexteSurf, GrosTexteRect)
    
    PetitTexteSurf, PetitTexteRect = creaTexteObj("Appuyez sur une touche pour découvrir votre clavier...", PetitTexte)
-   PetitTexteRect.center = WIDTH/2, ((HEIGHT/2)+50)
+   PetitTexteRect.center = 750, 470
    screen.blit(PetitTexteSurf, PetitTexteRect)
    
    pygame.display.update()
