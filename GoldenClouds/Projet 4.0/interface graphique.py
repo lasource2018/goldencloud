@@ -14,6 +14,8 @@ BLACK = (0, 0, 0)
 DARKGREY = (111, 111, 111)
 LIGHTGREY = (190, 190, 190)
 Fond = (223,210,220)
+
+#pygame.draw.rect(screen, COULEUR, (x, y, longueur, hauteur)
  
 #titre de la fenetre et image
 pygame.display.set_caption("GoldenCloud")
@@ -227,50 +229,58 @@ def keyup():
 
 
 def creaTexteObj(texte, Police):
-   texteSurface = Police.render(texte, True, WHITE)
+   texteSurface = Police.render(texte, True, DARKGREY)
    return texteSurface, texteSurface.get_rect()
    
 def message(texte):
    #on établit les polices d'écriture
-   GrosTexte = pygame.font.Font('police/BradBunR.ttf', 130)
-   PetitTexte = pygame.font.Font('police/BradBunR.ttf', 20)
-   TexteExplicatif = pygame.font.Font('police/BradBunR.ttf', 15)
+   GrosTexte = pygame.font.Font('police/VCR_OSD_MONO_1.001.ttf', 130)
+   PetitTexte = pygame.font.Font('police/VCR_OSD_MONO_1.001.ttf', 20)
+   TexteExplicatif = pygame.font.Font('police/VCR_OSD_MONO_1.001.ttf', 15)
 
    GrosTexteSurf, GrosTexteRect = creaTexteObj(texte, GrosTexte)
-   GrosTexteRect.center = 250, 400
+   GrosTexteRect.center = 350, 300
    screen.blit(GrosTexteSurf, GrosTexteRect)
    
    PetitTexteSurf, PetitTexteRect = creaTexteObj("Appuyez sur une touche pour découvrir votre clavier...", PetitTexte)
-   PetitTexteRect.center = 250, 470
+   PetitTexteRect.center = 350, 460
    screen.blit(PetitTexteSurf, PetitTexteRect)
 
-   TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj('instructions', TexteExplicatif)
-   TexteExplicatifRect.center = 750, 350
+   instructions = "W = plus fort, X = moins fort, C = clavier de piano, V = clavier d'un autre instrument, B = changer de couleur"
+   TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(instructions, TexteExplicatif)
+   TexteExplicatifRect.center = 500, 480
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
    
    pygame.display.update()
 
 def affichageTexte():
    message('Bienvenu!')
+
+def changerCouleurs():
+   if event.type == KEYDOWN :
+      if event.type == K_b:
+         couleurTemp = BLACK
+         BLACK = WHITE
+         WHITE = Fond
+         Fond = LIGHTGREY
+         LIGHTGREY = DARKGREY
+         DARKGREY = couleurTemp
+         screen.blit()
             
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 screen.fill(Fond)
 running = True
-   
 pygame.display.update()
-while running == True:
-      #pygame.draw.rect(screen, COULEUR, (x, y, longueur, hauteur)
-      
+while running == True:      
    for event in pygame.event.get() :
       if event.type == QUIT: 
          pygame.quit()
-
-
    affichageTexte()
    keydown()
    keyup()
+   #changerCouleurs()
 
             
 
