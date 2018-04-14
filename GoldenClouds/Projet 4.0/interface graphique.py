@@ -234,16 +234,16 @@ def creaTexteObj(texte, Police):
    
 def message(texte):
    #on établit les polices d'écriture
-   GrosTexte = pygame.font.Font('police/BradBunR.ttf', 130)
-   PetitTexte = pygame.font.Font('police/BradBunR.ttf', 20)
-   TexteExplicatif = pygame.font.Font('police/BradBunR.ttf', 15)
+   GrosTexte = pygame.font.Font('police/VCR_OSD_MONO_1.001.ttf', 130)
+   PetitTexte = pygame.font.Font('police/VCR_OSD_MONO_1.001.ttf', 20)
+   TexteExplicatif = pygame.font.Font('police/VCR_OSD_MONO_1.001.ttf', 15)
 
    GrosTexteSurf, GrosTexteRect = creaTexteObj(texte, GrosTexte)
-   GrosTexteRect.center = 250, 400
+   GrosTexteRect.center = 350, 400
    screen.blit(GrosTexteSurf, GrosTexteRect)
    
    PetitTexteSurf, PetitTexteRect = creaTexteObj("Appuyez sur une touche pour découvrir votre clavier...", PetitTexte)
-   PetitTexteRect.center = 250, 460
+   PetitTexteRect.center = 350, 460
    screen.blit(PetitTexteSurf, PetitTexteRect)
 
    instructions = "W = plus fort, X = moins fort, C = clavier de piano, V = clavier d'un autre instrument, B = changer de couleur"
