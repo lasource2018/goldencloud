@@ -239,7 +239,7 @@ def message(texte):
    TexteExplicatif = pygame.font.Font('police/VCR_OSD_MONO_1.001.ttf', 15)
 
    GrosTexteSurf, GrosTexteRect = creaTexteObj(texte, GrosTexte)
-   GrosTexteRect.center = 350, 400
+   GrosTexteRect.center = 350, 300
    screen.blit(GrosTexteSurf, GrosTexteRect)
    
    PetitTexteSurf, PetitTexteRect = creaTexteObj("Appuyez sur une touche pour découvrir votre clavier...", PetitTexte)
@@ -255,6 +255,17 @@ def message(texte):
 
 def affichageTexte():
    message('Bienvenu!')
+
+def changerCouleurs():
+   if event.type == KEYDOWN :
+      if event.type == K_b:
+         couleurTemp = BLACK
+         BLACK = WHITE
+         WHITE = Fond
+         Fond = LIGHTGREY
+         LIGHTGREY = DARKGREY
+         DARKGREY = couleurTemp
+         screen.blit()
             
 
 pygame.init()
@@ -262,17 +273,14 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 screen.fill(Fond)
 running = True
 pygame.display.update()
-while running == True:
-      
-      
+while running == True:      
    for event in pygame.event.get() :
       if event.type == QUIT: 
          pygame.quit()
-
-
    affichageTexte()
    keydown()
    keyup()
+   changerCouleurs()
 
             
 
