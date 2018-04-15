@@ -283,7 +283,15 @@ while running == True:
    affichageTexte()
    keydown()
    keyup()
+<<<<<<< HEAD
    
+=======
+<<<<<<< HEAD
+   changerCouleurs()
+=======
+   modifSon()
+>>>>>>> 4b4ff5b4465e4f29089f03c928d3737697371d45
+>>>>>>> 2e0cbd80a4a5edc1859a7090d3383a426613da42
    
 
             
