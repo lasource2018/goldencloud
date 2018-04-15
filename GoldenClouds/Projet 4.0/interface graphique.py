@@ -63,10 +63,12 @@ def keydown():
       if event.key == K_e:
          mi.play()
          pygame.draw.rect(screen, LIGHTGREY, (200, 50, 70, 200), 0)#MI
+         pygame.draw.rect(screen, LIGHTGREY, (200, 50, 55, 150), 0)#MI
          pygame.display.flip()
       if event.key == K_r:
          fa.play()
          pygame.draw.rect(screen, LIGHTGREY, (275, 50, 70, 200), 0)#FA
+         pygame.draw.rect(screen, LIGHTGREY, (275, 50, 50, 150), 0)#FA
          pygame.display.flip()
       if event.key == K_t:
          sol.play()
