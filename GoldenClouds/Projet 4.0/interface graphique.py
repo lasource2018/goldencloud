@@ -268,7 +268,8 @@ def Couleurs():
    if event.type == KEYDOWN :
       if event.type == K_b:
          screen.fill(WHITE)
-            
+         BLack = 0
+         
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -282,7 +283,7 @@ while running == True:
    affichageTexte()
    keydown()
    keyup()
-   modifSon()
+   
    
 
             
