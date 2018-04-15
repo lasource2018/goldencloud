@@ -227,9 +227,11 @@ def keyup():
          pygame.display.flip()
 
 
+def affichageTexte():
+   message('Bienvenu!')
 
 def creaTexteObj(texte, Police):
-   texteSurface = Police.render(texte, True, DARKGREY)
+   texteSurface = Police.render(texte, False, DARKGREY)
    return texteSurface, texteSurface.get_rect()
    
 def message(texte):
@@ -253,9 +255,6 @@ def message(texte):
    
    pygame.display.update()
 
-def affichageTexte():
-   message('Bienvenu!')
-
 def changerCouleurs():
    if event.type == KEYDOWN :
       if event.type == K_b:
@@ -265,7 +264,7 @@ def changerCouleurs():
          Fond = LIGHTGREY
          LIGHTGREY = DARKGREY
          DARKGREY = couleurTemp
-         screen.blit()
+         pygame.display.update()
             
 
 pygame.init()
@@ -280,9 +279,7 @@ while running == True:
    affichageTexte()
    keydown()
    keyup()
-   changerCouleurs()
-
-            
-
-
-
+   if event.type == KEYDOWN:
+      if event.type == K_BACKSPACE:
+         Fond = (133, 120, 110)
+         pygame.display.update()
