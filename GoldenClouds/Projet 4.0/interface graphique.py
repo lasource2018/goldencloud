@@ -44,6 +44,7 @@ fa2 = pygame.mixer.Sound("sons/18Fa2_-_¨.wav")
 sol2 = pygame.mixer.Sound("sons/19Sol2-$.wav")
 sol2b = pygame.mixer.Sound("sons/20Sol2b-=ou-.wav")
 
+
       #lorsqu'on appuie sur une touche
 def keydown():
    if event.type == KEYDOWN:
@@ -256,16 +257,17 @@ def message(texte):
 def affichageTexte():
    message('Bienvenu!')
 
-def changerCouleurs():
+def modifSon():
+   listedesons = [do, reb, re, mib, mi, fa, solb, sol, lab, la, sib, si, do2, re2, re2b, mi2, mi2b, fa2, sol2b, sol2
+]
+   
+   for loop in range (len(listedesons)):
+      listedesons[loop].set_Volume(0,5)
+
+def Couleurs():
    if event.type == KEYDOWN :
       if event.type == K_b:
-         couleurTemp = BLACK
-         BLACK = WHITE
-         WHITE = Fond
-         Fond = LIGHTGREY
-         LIGHTGREY = DARKGREY
-         DARKGREY = couleurTemp
-         screen.blit()
+         screen.fill(WHITE)
             
 
 pygame.init()
@@ -280,7 +282,11 @@ while running == True:
    affichageTexte()
    keydown()
    keyup()
+<<<<<<< HEAD
    changerCouleurs()
+=======
+   modifSon()
+>>>>>>> 4b4ff5b4465e4f29089f03c928d3737697371d45
    
 
             
