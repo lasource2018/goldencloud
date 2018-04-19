@@ -22,6 +22,7 @@ pygame.display.set_caption("GoldenCloud")
 icon_32x32 = pygame.image.load("images/background.jpg")
 pygame.display.set_icon(icon_32x32)
 
+
 #sons des notes
 do = pygame.mixer.Sound("sons/1DO_-_A.wav")
 reb = pygame.mixer.Sound("sons/2Reb_-_é.wav")
@@ -291,7 +292,12 @@ def Couleurs():
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-screen.fill(Fond)
+#images de fond: à modifier pour laisser apparaitre le programme
+fond = pygame.image.load("images/fond.jpg")
+screen.blit(fond, (0,0))
+pygame.display.flip()
+#fin de ce que j'ai fait
+screen.fill(fond)
 running = True
 pygame.display.update()
 while running == True:      
@@ -301,6 +307,8 @@ while running == True:
    affichageTexte()
    keydown()
    keyup()
+
+
    
    
 
