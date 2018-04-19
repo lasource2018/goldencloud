@@ -5,8 +5,21 @@ pygame.mixer.init(44100, -16, 2, 4096)  #pre_init(frequency=22050, size=-16, cha
 
 pygame.init()  #on initialise pygame
 
-WIDTH = 1000   #largeur de la fenêtre
-HEIGHT = 500   #hauteur de la fenêtre
+WIDTH = 1300   #largeur de la fenêtre
+HEIGHT = 600   #hauteur de la fenêtre
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+#images de fond
+fond1 = pygame.image.load("images/fond1.jpg")
+fond2 = pygame.image.load("images/fond2.jpg")
+screen.blit(fond1, (0,0))
+onglet = pygame.image.load("images/onglet.jpg")
+screen.blit(onglet, (1000, 0))
+iconwood = pygame.image.load("images/iconwood.jpg")
+iconnature = pygame.image.load("images/iconnature.jpg")
+screen.blit(iconwood, (1050, 500))
+screen.blit(iconnature, (1200, 500))
+pygame.display.flip()
 
 #couleurs = (rouge, vert, bleu)
 WHITE = (255, 255, 255)
@@ -50,8 +63,16 @@ sol2b = pygame.mixer.Sound("sons/20Sol2b-=ou-.wav")
 def keydown():
    if event.type == KEYDOWN:
 
+#changer la couleur de fond
+      if event.key == K_n :
+         screen.blit(fond2, (0,0))
+         pygame.display.flip()
+      if event.key == K_b :
+         screen.blit(fond1, (0,0))
+         pygame.display.flip()
+
 #notes blanches
-      if event.key == K_q: #on met “z” car pygame code en qwerty, cela équivaut donc à “a” sur notre clavier
+      if event.key == K_q: #on met “q” car pygame code en qwerty, cela équivaut donc à “a” sur notre clavier
          do.play()
          pygame.draw.rect(screen, LIGHTGREY, (50, 50, 50, 150), 0)#DO
          pygame.draw.rect(screen, LIGHTGREY, (50, 200, 70, 50), 0)#DO
@@ -251,24 +272,24 @@ def keyup():
 
 
 def creaTexteObj(texte, Police):
-   texteSurface = Police.render(texte, True, DARKGREY)
+   texteSurface = Police.render(texte, True, WHITE)
    return texteSurface, texteSurface.get_rect()
    
 def message(texte):
    #on établit les polices d'écriture
-   GrosTexte = pygame.font.Font('police/VCR_OSD_MONO_1.001.ttf', 130)
-   PetitTexte = pygame.font.Font('police/VCR_OSD_MONO_1.001.ttf', 20)
-   TexteExplicatif = pygame.font.Font('police/VCR_OSD_MONO_1.001.ttf', 15)
+   GrosTexte = pygame.font.Font('police/TitilliumWeb-SemiBold.ttf', 130)
+   PetitTexte = pygame.font.Font('police/TitilliumWeb-ExtraLight.ttf', 30)
+   TexteExplicatif = pygame.font.Font('police/TitilliumWeb-ExtraLight.ttf', 20)
 
    GrosTexteSurf, GrosTexteRect = creaTexteObj(texte, GrosTexte)
-   GrosTexteRect.center = 350, 300
+   GrosTexteRect.center = 500, 350
    screen.blit(GrosTexteSurf, GrosTexteRect)
    
    PetitTexteSurf, PetitTexteRect = creaTexteObj("Appuyez sur une touche pour découvrir votre clavier...", PetitTexte)
    PetitTexteRect.center = 350, 460
    screen.blit(PetitTexteSurf, PetitTexteRect)
 
-   instructions = "W = plus fort, X = moins fort, C = clavier de piano, V = clavier d'un autre instrument, B = changer de couleur"
+   instructions = "W = plus fort, X = moins fort, C = clavier de piano, V = clavier d'un autre instrument, N = Changer le fond"
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(instructions, TexteExplicatif)
    TexteExplicatifRect.center = 500, 480
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
@@ -276,7 +297,7 @@ def message(texte):
    pygame.display.update()
 
 def affichageTexte():
-   message('Bienvenu!')
+   message('Bienvenue !')
 
 def modifSon():
    listedesons = [do, reb, re, mib, mi, fa, solb, sol, lab, la, sib, si, do2, re2, re2b, mi2, mi2b, fa2, sol2b, sol2
@@ -289,15 +310,9 @@ def Couleurs():
    if event.type == KEYDOWN :
       if event.type == K_b:
          screen.fill(WHITE)
+   
 
 pygame.init()
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-#images de fond: à modifier pour laisser apparaitre le programme
-fond = pygame.image.load("images/fond.jpg")
-screen.blit(fond, (0,0))
-pygame.display.flip()
-#fin de ce que j'ai fait
-screen.fill(fond)
 running = True
 pygame.display.update()
 while running == True:      
