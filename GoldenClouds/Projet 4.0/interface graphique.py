@@ -41,7 +41,6 @@ pygame.display.set_caption("GoldenCloud")
 icon_32x32 = pygame.image.load("images/background.jpg")
 pygame.display.set_icon(icon_32x32)
 
-
 #sons des notes du piano
 do = pygame.mixer.Sound("sons/Piano/1Do.wav")
 reb = pygame.mixer.Sound("sons/Piano/2Reb.wav")
@@ -65,17 +64,20 @@ sol2 = pygame.mixer.Sound("sons/Piano/19Sol2.wav")
 sol2b = pygame.mixer.Sound("sons/Piano/20Solb2.wav")
 
 
+
+
       #lorsqu'on appuie sur une touche
 def keydown():
    if event.type == KEYDOWN:
 
-#changer la couleur de fond
+#changer de fond
       if event.key == K_n :
          screen.blit(fond2, (0,0))
          pygame.display.flip()
       if event.key == K_b :
          screen.blit(fond1, (0,0))
          pygame.display.flip()
+
 
 #notes blanches
       if event.key == K_q: #on met “q” car pygame code en qwerty, cela équivaut donc à “a” sur notre clavier
@@ -288,13 +290,11 @@ def message(texte):
    PetitTexte = pygame.font.Font('police/TitilliumWeb-ExtraLight.ttf', 25)
    TexteExplicatif = pygame.font.Font('police/TitilliumWeb-ExtraLight.ttf', 20)
 
-   TitreSurf, TitreRect = creaTexteObj(" ", Titre)
-   TitreRect.center = 1150, 50
-   screen.blit(TitreSurf, TitreRect)
 
    GrosTexteSurf, GrosTexteRect = creaTexteObj(texte, GrosTexte)
    GrosTexteRect.center = 500, 350
    screen.blit(GrosTexteSurf, GrosTexteRect)
+
    
    PetitTexteSurf, PetitTexteRect = creaTexteObj("Appuyez sur une touche pour découvrir votre clavier...", PetitTexte)
    PetitTexteRect.center = 500, 480
