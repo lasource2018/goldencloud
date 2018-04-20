@@ -15,6 +15,12 @@ fond2 = pygame.image.load("images/fond2.jpg")
 screen.blit(fond1, (0,0))
 onglet = pygame.image.load("images/onglet.jpg")
 screen.blit(onglet, (1000, 0))
+logo = pygame.image.load("images/logo.jpg")
+screen.blit(logo, (1000,0))
+iconpiano = pygame.image.load("images/iconpiano.jpg")
+screen.blit(iconpiano, (1040, 160))
+iconsaxo = pygame.image.load("images/iconsaxo.jpg")
+screen.blit(iconsaxo, (1180, 160))
 iconwood = pygame.image.load("images/iconwood.jpg")
 iconnature = pygame.image.load("images/iconnature.jpg")
 screen.blit(iconwood, (1050, 500))
@@ -36,27 +42,27 @@ icon_32x32 = pygame.image.load("images/background.jpg")
 pygame.display.set_icon(icon_32x32)
 
 
-#sons des notes
-do = pygame.mixer.Sound("sons/1DO_-_A.wav")
-reb = pygame.mixer.Sound("sons/2Reb_-_é.wav")
-re = pygame.mixer.Sound("sons/3R_-_Z.wav")
-mib = pygame.mixer.Sound("sons/4Mib_-__.wav")
-mi = pygame.mixer.Sound("sons/5Mi_-_E.wav")
-fa = pygame.mixer.Sound("sons/6Fa_-_R.wav")
-solb = pygame.mixer.Sound("sons/7solb-_).wav")
-sol = pygame.mixer.Sound("sons/8Sol_-_T.wav")
-lab = pygame.mixer.Sound("sons/9Lab_-_G_ou_§T.wav")
-la = pygame.mixer.Sound("sons/10La-_Y.wav")
-sib = pygame.mixer.Sound("sons/11Sib_-_è.wav")
-si = pygame.mixer.Sound("sons/12Si_-_U.wav")
-do2 = pygame.mixer.Sound("sons/13Do2_-_I.wav")
-re2 = pygame.mixer.Sound("sons/14Re2-_O.wav")
-re2b = pygame.mixer.Sound("sons/15Ré2b_-_ç.wav")
-mi2 = pygame.mixer.Sound("sons/16Mi2_-_P.wav")
-mi2b = pygame.mixer.Sound("sons/17Mi2b_-_à.wav")
-fa2 = pygame.mixer.Sound("sons/18Fa2_-_¨.wav")
-sol2 = pygame.mixer.Sound("sons/19Sol2-$.wav")
-sol2b = pygame.mixer.Sound("sons/20Sol2b-=ou-.wav")
+#sons des notes du piano
+do = pygame.mixer.Sound("sons/Piano/1Do.wav")
+reb = pygame.mixer.Sound("sons/Piano/2Reb.wav")
+re = pygame.mixer.Sound("sons/Piano/3Re.wav")
+mib = pygame.mixer.Sound("sons/Piano/4Mib.wav")
+mi = pygame.mixer.Sound("sons/Piano/5Mi.wav")
+fa = pygame.mixer.Sound("sons/Piano/6Fa.wav")
+solb = pygame.mixer.Sound("sons/Piano/7Solb.wav")
+sol = pygame.mixer.Sound("sons/Piano/8Sol.wav")
+lab = pygame.mixer.Sound("sons/Piano/9Lab.wav")
+la = pygame.mixer.Sound("sons/Piano/10La.wav")
+sib = pygame.mixer.Sound("sons/Piano/11Sib.wav")
+si = pygame.mixer.Sound("sons/Piano/12Si.wav")
+do2 = pygame.mixer.Sound("sons/Piano/13Do2.wav")
+re2 = pygame.mixer.Sound("sons/Piano/14Re2.wav")
+re2b = pygame.mixer.Sound("sons/Piano/15Reb2.wav")
+mi2 = pygame.mixer.Sound("sons/Piano/16Mi2.wav")
+mi2b = pygame.mixer.Sound("sons/Piano/17Mib2.wav")
+fa2 = pygame.mixer.Sound("sons/Piano/18Fa2.wav")
+sol2 = pygame.mixer.Sound("sons/Piano/19Sol2.wav")
+sol2b = pygame.mixer.Sound("sons/Piano/20Solb2.wav")
 
 
       #lorsqu'on appuie sur une touche
@@ -277,22 +283,49 @@ def creaTexteObj(texte, Police):
    
 def message(texte):
    #on établit les polices d'écriture
+   Titre = pygame.font.Font('police/TitilliumWeb-SemiBold.ttf', 40)
    GrosTexte = pygame.font.Font('police/TitilliumWeb-SemiBold.ttf', 130)
-   PetitTexte = pygame.font.Font('police/TitilliumWeb-ExtraLight.ttf', 30)
+   PetitTexte = pygame.font.Font('police/TitilliumWeb-ExtraLight.ttf', 25)
    TexteExplicatif = pygame.font.Font('police/TitilliumWeb-ExtraLight.ttf', 20)
+
+   TitreSurf, TitreRect = creaTexteObj(" ", Titre)
+   TitreRect.center = 1150, 50
+   screen.blit(TitreSurf, TitreRect)
 
    GrosTexteSurf, GrosTexteRect = creaTexteObj(texte, GrosTexte)
    GrosTexteRect.center = 500, 350
    screen.blit(GrosTexteSurf, GrosTexteRect)
    
    PetitTexteSurf, PetitTexteRect = creaTexteObj("Appuyez sur une touche pour découvrir votre clavier...", PetitTexte)
-   PetitTexteRect.center = 350, 460
+   PetitTexteRect.center = 500, 480
    screen.blit(PetitTexteSurf, PetitTexteRect)
 
-   instructions = "W = plus fort, X = moins fort, C = clavier de piano, V = clavier d'un autre instrument, N = Changer le fond"
-   TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(instructions, TexteExplicatif)
-   TexteExplicatifRect.center = 500, 480
+
+   InstructionInstrument = "Choisissez votre instrument :" 
+   ComInstrument = "C                                  V"
+   InstructionSon = "Plus fort :          Moins Fort : " 
+   ComSon = "W                                  X"
+   InstructionFond = "Changez le fond :"  
+   ComFond = "B                                 N"
+   TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionInstrument, TexteExplicatif)
+   TexteExplicatifRect.center = 1150, 100
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
+   TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(ComInstrument, TexteExplicatif)
+   TexteExplicatifRect.center = 1150, 130
+   screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
+   TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionSon, TexteExplicatif)
+   TexteExplicatifRect.center = 1150, 325
+   screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
+   TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(ComSon, TexteExplicatif)
+   TexteExplicatifRect.center = 1150, 355
+   screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
+   TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionFond, TexteExplicatif)
+   TexteExplicatifRect.center = 1150, 450
+   screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
+   TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(ComFond, TexteExplicatif)
+   TexteExplicatifRect.center = 1150, 480
+   screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
+   
    
    pygame.display.update()
 
