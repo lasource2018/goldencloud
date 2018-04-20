@@ -66,6 +66,7 @@ sol2b = pygame.mixer.Sound("sons/Piano/20Solb2.wav")
 
 
 
+
       #lorsqu'on appuie sur une touche
 def keydown():
    if event.type == KEYDOWN:
@@ -325,8 +326,6 @@ def message(texte):
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(ComFond, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 480
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
-   
-   
    pygame.display.update()
 
 def affichageTexte():
