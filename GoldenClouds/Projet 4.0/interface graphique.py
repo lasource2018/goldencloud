@@ -312,37 +312,32 @@ def message(texte):
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionInstrument, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 100
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
+   
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(ComInstrument, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 130
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
+   
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionSon, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 325
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
+   
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(ComSon, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 355
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
+   
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionFond, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 450
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
+   
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(ComFond, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 480
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
+   
    pygame.display.update()
 
 def affichageTexte():
    message('Bienvenue !')
 
-def modifSon():
-   listedesons = [do, reb, re, mib, mi, fa, solb, sol, lab, la, sib, si, do2, re2, re2b, mi2, mi2b, fa2, sol2b, sol2
-]
-   
-   for loop in range (len(listedesons)):
-      listedesons[loop].set_Volume(0,5)
-
-def Couleurs():
-   if event.type == KEYDOWN :
-      if event.type == K_b:
-         screen.fill(WHITE)
    
 
 pygame.init()
