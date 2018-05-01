@@ -1,8 +1,8 @@
 import pygame                    #on importe les bibliothèques
 from pygame.locals import *
 
-pygame.mixer.pre_init(22050, -16, 2, 4096)
-pygame.mixer.init(44100, -16, 2, 4096)  #pre_init(frequency=22050, size=-16, channels=2, buffersize=4096)réduire le temps de latence
+pygame.mixer.init(44100, -16, 2, 4096)
+#pre_init(frequency=22050, size=-16, channels=2, buffersize=4096)réduire le temps de latence
 
 pygame.init()  #on initialise pygame
 
@@ -63,6 +63,32 @@ mi2b = pygame.mixer.Sound("sons/Piano/17Mib2.wav")
 fa2 = pygame.mixer.Sound("sons/Piano/18Fa2.wav")
 sol2 = pygame.mixer.Sound("sons/Piano/19Sol2.wav")
 sol2b = pygame.mixer.Sound("sons/Piano/20Solb2.wav")
+
+
+
+def Sons():
+   if event.type == KEYDOWN :
+      if event.type == K_v:
+         do = pygame.mixer.Sound("sons/Saxo/1Do.wav")
+         reb = pygame.mixer.Sound("sons/Saxo/2Reb.wav")
+         re = pygame.mixer.Sound("sons/Saxo/3Re.wav")
+         mib = pygame.mixer.Sound("sons/Saxo/4Mib.wav")
+         mi = pygame.mixer.Sound("sons/Saxo/5Mi.wav")
+         fa = pygame.mixer.Sound("sons/Saxo/6Fa.wav")
+         solb = pygame.mixer.Sound("sons/Saxo/7Solb.wav")
+         sol = pygame.mixer.Sound("sons/Saxo/8Sol.wav")
+         lab = pygame.mixer.Sound("sons/Saxo/9Lab.wav")
+         la = pygame.mixer.Sound("sons/Saxo/10La.wav")
+         sib = pygame.mixer.Sound("sons/Saxo/11Sib.wav")
+         si = pygame.mixer.Sound("sons/Saxo/12Si.wav")
+         do2 = pygame.mixer.Sound("sons/Saxo/13Do2.wav")
+         re2 = pygame.mixer.Sound("sons/Saxo/14Re2.wav")
+         re2b = pygame.mixer.Sound("sons/Saxo/15Reb2.wav")
+         mi2 = pygame.mixer.Sound("sons/Saxo/16Mi2.wav")
+         mi2b = pygame.mixer.Sound("sons/Saxo/17Mib2.wav")
+         fa2 = pygame.mixer.Sound("sons/Saxo/18Fa2.wav")
+         sol2 = pygame.mixer.Sound("sons/Saxo/19Sol2.wav")
+         sol2b = pygame.mixer.Sound("sons/Saxo/20Solb2.wav")
 
 
 
@@ -312,32 +338,37 @@ def message(texte):
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionInstrument, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 100
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
-   
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(ComInstrument, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 130
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
-   
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionSon, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 325
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
-   
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(ComSon, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 355
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
-   
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionFond, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 450
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
-   
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(ComFond, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 480
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
-   
    pygame.display.update()
 
 def affichageTexte():
    message('Bienvenue !')
 
+def modifSon():
+   listedesons = [do, reb, re, mib, mi, fa, solb, sol, lab, la, sib, si, do2, re2, re2b, mi2, mi2b, fa2, sol2b, sol2
+]
+   
+   for loop in range (len(listedesons)):
+      listedesons[loop].set_Volume(0,5)
+
+def Couleurs():
+   if event.type == KEYDOWN :
+      if event.type == K_b:
+         screen.fill(WHITE)
    
 
 pygame.init()
