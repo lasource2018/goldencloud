@@ -1,6 +1,7 @@
 import pygame                    #on importe les bibliothèques
 from pygame.locals import *
 
+pygame.mixer.pre_init(22050, -16, 2, 4096)
 pygame.mixer.init(44100, -16, 2, 4096)  #pre_init(frequency=22050, size=-16, channels=2, buffersize=4096)réduire le temps de latence
 
 pygame.init()  #on initialise pygame
