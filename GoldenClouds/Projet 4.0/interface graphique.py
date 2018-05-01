@@ -388,7 +388,7 @@ def message(texte):
 def affichageTexte():
    message('Bienvenue !')
 
-
+   
 
 pygame.init()
 running = True
@@ -397,10 +397,11 @@ while running == True:
    for event in pygame.event.get() :
       if event.type == QUIT: 
          pygame.quit()
+   Sons()
    affichageTexte()
    keydown()
    keyup()
-   Sons()
+   
 
 
    
