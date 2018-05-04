@@ -43,7 +43,7 @@ icon_32x32 = pygame.image.load("images/background.jpg")
 pygame.display.set_icon(icon_32x32)
 
 #sons des notes du piano
-instrument = 1
+instrument = 0
 
 
 
@@ -94,7 +94,7 @@ if instrument == 1 :
 
 
 def Sons():
-   if event.type == KEYDOWN :
+   #saxo
       if event.type == K_v:
          do = pygame.mixer.Sound("sons/Saxo/1Do.wav")
          reb = pygame.mixer.Sound("sons/Saxo/2Reb.wav")
@@ -116,7 +116,7 @@ def Sons():
          fa2 = pygame.mixer.Sound("sons/Saxo/18Fa2.wav")
          sol2 = pygame.mixer.Sound("sons/Saxo/19Sol2.wav")
          sol2b = pygame.mixer.Sound("sons/Saxo/20Solb2.wav")
-
+   #piano
       if event.type == K_c:
          do = pygame.mixer.Sound("sons/Piano/1Do.wav")
          reb = pygame.mixer.Sound("sons/Piano/2Reb.wav")
@@ -413,19 +413,56 @@ def message(texte):
 def affichageTexte():
    message('Bienvenue !')
 
+def modifsSons ():
+   while instruments == 0 :
+      do = pygame.mixer.Sound("sons/Piano/1Do.wav")
+   while instruments == 1 :
+      do = pygame.mixer.Sound("sons/Saxo/1Do.wav")
+   if event.type == KEYDOWN :
+      if event.key == K_c :
+         instruments == 0
+      if event.key == K_v :
+         instruments == 1
+
+      
+
+      
+
    
 
 pygame.init()
 running = True
 pygame.display.update()
 while running == True:      
-   for event in pygame.event.get() :
-      if event.type == QUIT: 
-         pygame.quit()
-   Sons()
-   affichageTexte()
-   keydown()
-   keyup()
+   while instrument == 0 :
+      affichageTexte()
+      for event in pygame.event.get() :
+         if event.type == QUIT: 
+            pygame.quit()
+
+      keydown()
+      keyup()
+      for event in pygame.event.get() :
+         if event.type == KEYDOWN :
+            if event.key == K_v :
+               instrument = 1
+      do = pygame.mixer.Sound("sons/Piano/1Do.wav")
+
+   while instrument == 1 :
+
+      affichageTexte()
+      for event in pygame.event.get() :
+         if event.type == QUIT: 
+            pygame.quit()
+      keydown()
+      keyup()
+      for event in pygame.event.get() :
+         if event.type == KEYDOWN :
+            if event.key == K_c :
+               instrument = 0
+      do = pygame.mixer.Sound("sons/Saxo/1Do.wav")
+
+      
    
 
 
