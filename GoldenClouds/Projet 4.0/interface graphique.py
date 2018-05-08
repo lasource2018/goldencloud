@@ -321,7 +321,6 @@ def message(texte):
 
 def affichageTexte():
    message('Bienvenue !')     
-
    
 
 pygame.init()
@@ -336,6 +335,13 @@ while running == True:
          if event.type == KEYDOWN :
             if event.key == K_v :
                instrument = 1
+         if event.type == MOUSEBUTTONDOWN and event.button == 1 :
+            if 1220<event.pos[0]<1250 and 510<event.pos[1]<560:
+               pygame.draw.rect(screen, WHITE, (850, 250, 40, 150), 0)
+               pygame.display.flip()
+            if 1200<event.pos[0]<1220 and 510<event.pos[1]<560:
+               pygame.draw.rect(screen, BLACK, (850, 250, 40, 150), 0)
+               pygame.display.flip()
          keydown()
          
       do = pygame.mixer.Sound("sons/Piano/1Do.wav")
