@@ -265,6 +265,7 @@ def keydown():
          sol2b.stop()
          pygame.draw.rect(screen, BLACK, (850, 50, 40, 150), 0)  #SOL2b
          pygame.display.flip()
+         
 
 
 
@@ -326,6 +327,8 @@ def message(texte):
 def affichageTexte():
    message('Bienvenue !')     
 
+pygame.mixer.music.load("sons/Drums/drum1.wav")
+
    
 
 pygame.init()
@@ -340,6 +343,9 @@ while running == True:
          if event.type == KEYDOWN :
             if event.key == K_v :
                instrument = 1
+            if event.key == K_a :
+               pygame.mixer.music.play()
+               
          keydown()
          
       do = pygame.mixer.Sound("sons/Piano/1Do.wav")
