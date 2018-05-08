@@ -25,11 +25,13 @@ screen.blit(iconsaxo, (1180, 160))
 iconwood = pygame.image.load("images/iconwood.jpg")
 iconnature = pygame.image.load("images/iconnature.jpg")
 screen.blit(iconwood, (1050, 310))
-screen.blit(iconnature, (1200, 310))
+screen.blit(iconnature, (1190, 310))
 icondrum = pygame.image.load("images/icondrum.jpg")
-screen.blit(icondrum, (1050, 430))
+iconmoins = pygame.image.load("images/iconmoins.jpg")
+iconplus = pygame.image.load("images/iconplus.jpg")
+screen.blit(iconmoins, (1050, 440))
 screen.blit(icondrum, (1120, 430))
-screen.blit(icondrum, (1190, 430))
+screen.blit(iconplus, (1195, 440))
 iconplay = pygame.image.load("images/iconplay.jpg")
 iconstop = pygame.image.load("images/iconstop.jpg")
 screen.blit(iconplay, (1080, 530))
@@ -52,6 +54,14 @@ pygame.display.set_icon(icon_32x32)
 
 #sons des notes du piano
 instrument = 0
+
+#sons des boites a musique
+#pygame.mixer.music.load("sons/Drums/drum1.wav")
+pygame.mixer.music.load("sons/Drums/drum2.wav")
+#pygame.mixer.music.load("sons/Drums/drum3.wav")
+
+#volume des boites a musique
+pygame.mixer.music.set_volume(0.6)
 
       #lorsqu'on appuie sur une touche
 def keydown():
@@ -327,7 +337,21 @@ def message(texte):
 def affichageTexte():
    message('Bienvenue !')     
 
-pygame.mixer.music.load("sons/Drums/drum1.wav")
+
+
+def boitesamusique () :
+   if 1120<event.pos[0]<1170 and 430<event.pos[1]<480 :
+      pygame.mixer.music.play()
+      pygame.mixer.music.set_volume(0.6)
+   if 1080<event.pos[0]<1120 and 530<event.pos[1]<570 :
+      pygame.mixer.music.unpause()
+   if 1180<event.pos[0]<1220 and 530<event.pos[1]<570 :
+      pygame.mixer.music.pause()
+   if 1050<event.pos[0]<1093 and 440<event.pos[1]<473 :
+      pygame.mixer.music.set_volume(0.5)
+   if 1195<event.pos[0]<1238 and 440<event.pos[1]<474 :
+      pygame.mixer.music.set_volume(1)
+      
 
    
 
@@ -343,9 +367,9 @@ while running == True:
          if event.type == KEYDOWN :
             if event.key == K_v :
                instrument = 1
-            if event.key == K_a :
-               pygame.mixer.music.play()
-               
+         if event.type == MOUSEBUTTONDOWN and event.button == 1 :
+            boitesamusique()
+            
          keydown()
          
       do = pygame.mixer.Sound("sons/Piano/1Do.wav")
@@ -378,6 +402,8 @@ while running == True:
          if event.type == KEYDOWN :
             if event.key == K_c :
                instrument = 0
+         if event.type == MOUSEBUTTONDOWN and event.button == 1 :
+            boitesamusique()
          keydown()
          
       do = pygame.mixer.Sound("sons/Saxo/1Do.wav")
