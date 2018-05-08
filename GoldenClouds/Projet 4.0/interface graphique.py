@@ -43,6 +43,7 @@ icon_32x32 = pygame.image.load("images/background.jpg")
 pygame.display.set_icon(icon_32x32)
 
 #sons des notes du piano
+instrument = 0
 
       #lorsqu'on appuie sur une touche
 def keydown():
