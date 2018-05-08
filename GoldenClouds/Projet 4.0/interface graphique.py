@@ -159,7 +159,7 @@ def keydown():
 
 
       #lorque la pression sur la touche est relachée
-def keyup():
+
    if event.type == KEYUP:
 
 #notes blanches   
@@ -333,7 +333,7 @@ while running == True:
             if event.key == K_v :
                instrument = 1
          keydown()
-         keyup()
+         
       do = pygame.mixer.Sound("sons/Piano/1Do.wav")
       reb = pygame.mixer.Sound("sons/Piano/2Reb.wav")
       re = pygame.mixer.Sound("sons/Piano/3Re.wav")
@@ -355,8 +355,8 @@ while running == True:
       sol2 = pygame.mixer.Sound("sons/Piano/19Sol2.wav")
       sol2b = pygame.mixer.Sound("sons/Piano/20Solb2.wav")
 
-
    while instrument == 1 :
+
       affichageTexte()
       for event in pygame.event.get() :
          if event.type == QUIT: 
@@ -365,7 +365,7 @@ while running == True:
             if event.key == K_c :
                instrument = 0
          keydown()
-         keyup()
+         
       do = pygame.mixer.Sound("sons/Saxo/1Do.wav")
       reb = pygame.mixer.Sound("sons/Saxo/2Reb.wav")
       re = pygame.mixer.Sound("sons/Saxo/3Re.wav")
@@ -387,17 +387,9 @@ while running == True:
       sol2 = pygame.mixer.Sound("sons/Saxo/19Sol2.wav")
       sol2b = pygame.mixer.Sound("sons/Saxo/20Solb2.wav")
 
-   if instument == 3 :
+   if instrument == 3:
       running = False
       pygame.quit()
 
 
-
-
-   
-   
-
-            
-
-
-
+      
