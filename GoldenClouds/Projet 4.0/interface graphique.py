@@ -323,19 +323,17 @@ def affichageTexte():
 pygame.init()
 running = True
 pygame.display.update()
-while running == True:      
+while running == True:
    while instrument == 0 :
       affichageTexte()
       for event in pygame.event.get() :
          if event.type == QUIT: 
             pygame.quit()
-
-      keydown()
-      keyup()
-      for event in pygame.event.get() :
          if event.type == KEYDOWN :
             if event.key == K_v :
                instrument = 1
+         keydown()
+         keyup()
       do = pygame.mixer.Sound("sons/Piano/1Do.wav")
       reb = pygame.mixer.Sound("sons/Piano/2Reb.wav")
       re = pygame.mixer.Sound("sons/Piano/3Re.wav")
