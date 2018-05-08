@@ -43,102 +43,6 @@ icon_32x32 = pygame.image.load("images/background.jpg")
 pygame.display.set_icon(icon_32x32)
 
 #sons des notes du piano
-instrument = 0
-
-
-
-if instrument == 0 :
-   do = pygame.mixer.Sound("sons/Piano/1Do.wav")
-   reb = pygame.mixer.Sound("sons/Piano/2Reb.wav")
-   re = pygame.mixer.Sound("sons/Piano/3Re.wav")
-   mib = pygame.mixer.Sound("sons/Piano/4Mib.wav")
-   mi = pygame.mixer.Sound("sons/Piano/5Mi.wav")
-   fa = pygame.mixer.Sound("sons/Piano/6Fa.wav")
-   solb = pygame.mixer.Sound("sons/Piano/7Solb.wav")
-   sol = pygame.mixer.Sound("sons/Piano/8Sol.wav")
-   lab = pygame.mixer.Sound("sons/Piano/9Lab.wav")
-   la = pygame.mixer.Sound("sons/Piano/10La.wav")
-   sib = pygame.mixer.Sound("sons/Piano/11Sib.wav")
-   si = pygame.mixer.Sound("sons/Piano/12Si.wav")
-   do2 = pygame.mixer.Sound("sons/Piano/13Do2.wav")
-   re2 = pygame.mixer.Sound("sons/Piano/14Re2.wav")
-   re2b = pygame.mixer.Sound("sons/Piano/15Reb2.wav")
-   mi2 = pygame.mixer.Sound("sons/Piano/16Mi2.wav")
-   mi2b = pygame.mixer.Sound("sons/Piano/17Mib2.wav")
-   fa2 = pygame.mixer.Sound("sons/Piano/18Fa2.wav")
-   sol2 = pygame.mixer.Sound("sons/Piano/19Sol2.wav")
-   sol2b = pygame.mixer.Sound("sons/Piano/20Solb2.wav")
-
-if instrument == 1 :
-   do = pygame.mixer.Sound("sons/Saxo/1Do.wav")
-   reb = pygame.mixer.Sound("sons/Saxo/2Reb.wav")
-   re = pygame.mixer.Sound("sons/Saxo/3Re.wav")
-   mib = pygame.mixer.Sound("sons/Saxo/4Mib.wav")
-   mi = pygame.mixer.Sound("sons/Saxo/5Mi.wav")
-   fa = pygame.mixer.Sound("sons/Saxo/6Fa.wav")
-   solb = pygame.mixer.Sound("sons/Saxo/7Solb.wav")
-   sol = pygame.mixer.Sound("sons/Saxo/8Sol.wav")
-   lab = pygame.mixer.Sound("sons/Saxo/9Lab.wav")
-   la = pygame.mixer.Sound("sons/Saxo/10La.wav")
-   sib = pygame.mixer.Sound("sons/Saxo/11Sib.wav")
-   si = pygame.mixer.Sound("sons/Saxo/12Si.wav")
-   do2 = pygame.mixer.Sound("sons/Saxo/13Do2.wav")
-   re2 = pygame.mixer.Sound("sons/Saxo/14Re2.wav")
-   re2b = pygame.mixer.Sound("sons/Saxo/15Reb2.wav")
-   mi2 = pygame.mixer.Sound("sons/Saxo/16Mi2.wav")
-   mi2b = pygame.mixer.Sound("sons/Saxo/17Mib2.wav")
-   fa2 = pygame.mixer.Sound("sons/Saxo/18Fa2.wav")
-   sol2 = pygame.mixer.Sound("sons/Saxo/19Sol2.wav")
-   sol2b = pygame.mixer.Sound("sons/Saxo/20Solb2.wav")
-
-
-
-def Sons():
-   #saxo
-      if event.type == K_v:
-         do = pygame.mixer.Sound("sons/Saxo/1Do.wav")
-         reb = pygame.mixer.Sound("sons/Saxo/2Reb.wav")
-         re = pygame.mixer.Sound("sons/Saxo/3Re.wav")
-         mib = pygame.mixer.Sound("sons/Saxo/4Mib.wav")
-         mi = pygame.mixer.Sound("sons/Saxo/5Mi.wav")
-         fa = pygame.mixer.Sound("sons/Saxo/6Fa.wav")
-         solb = pygame.mixer.Sound("sons/Saxo/7Solb.wav")
-         sol = pygame.mixer.Sound("sons/Saxo/8Sol.wav")
-         lab = pygame.mixer.Sound("sons/Saxo/9Lab.wav")
-         la = pygame.mixer.Sound("sons/Saxo/10La.wav")
-         sib = pygame.mixer.Sound("sons/Saxo/11Sib.wav")
-         si = pygame.mixer.Sound("sons/Saxo/12Si.wav")
-         do2 = pygame.mixer.Sound("sons/Saxo/13Do2.wav")
-         re2 = pygame.mixer.Sound("sons/Saxo/14Re2.wav")
-         re2b = pygame.mixer.Sound("sons/Saxo/15Reb2.wav")
-         mi2 = pygame.mixer.Sound("sons/Saxo/16Mi2.wav")
-         mi2b = pygame.mixer.Sound("sons/Saxo/17Mib2.wav")
-         fa2 = pygame.mixer.Sound("sons/Saxo/18Fa2.wav")
-         sol2 = pygame.mixer.Sound("sons/Saxo/19Sol2.wav")
-         sol2b = pygame.mixer.Sound("sons/Saxo/20Solb2.wav")
-   #piano
-      if event.type == K_c:
-         do = pygame.mixer.Sound("sons/Piano/1Do.wav")
-         reb = pygame.mixer.Sound("sons/Piano/2Reb.wav")
-         re = pygame.mixer.Sound("sons/Piano/3Re.wav")
-         mib = pygame.mixer.Sound("sons/Piano/4Mib.wav")
-         mi = pygame.mixer.Sound("sons/Piano/5Mi.wav")
-         fa = pygame.mixer.Sound("sons/Piano/6Fa.wav")
-         solb = pygame.mixer.Sound("sons/Piano/7Solb.wav")
-         sol = pygame.mixer.Sound("sons/Piano/8Sol.wav")
-         lab = pygame.mixer.Sound("sons/Piano/9Lab.wav")
-         la = pygame.mixer.Sound("sons/Piano/10La.wav")
-         sib = pygame.mixer.Sound("sons/Piano/11Sib.wav")
-         si = pygame.mixer.Sound("sons/Piano/12Si.wav")
-         do2 = pygame.mixer.Sound("sons/Piano/13Do2.wav")
-         re2 = pygame.mixer.Sound("sons/Piano/14Re2.wav")
-         re2b = pygame.mixer.Sound("sons/Piano/15Reb2.wav")
-         mi2 = pygame.mixer.Sound("sons/Piano/16Mi2.wav")
-         mi2b = pygame.mixer.Sound("sons/Piano/17Mib2.wav")
-         fa2 = pygame.mixer.Sound("sons/Piano/18Fa2.wav")
-         sol2 = pygame.mixer.Sound("sons/Piano/19Sol2.wav")
-         sol2b = pygame.mixer.Sound("sons/Piano/20Solb2.wav")
-
 
       #lorsqu'on appuie sur une touche
 def keydown():
@@ -411,22 +315,7 @@ def message(texte):
    pygame.display.update()
 
 def affichageTexte():
-   message('Bienvenue !')
-
-def modifsSons ():
-   while instruments == 0 :
-      do = pygame.mixer.Sound("sons/Piano/1Do.wav")
-   while instruments == 1 :
-      do = pygame.mixer.Sound("sons/Saxo/1Do.wav")
-   if event.type == KEYDOWN :
-      if event.key == K_c :
-         instruments == 0
-      if event.key == K_v :
-         instruments == 1
-
-      
-
-      
+   message('Bienvenue !')     
 
    
 
