@@ -24,8 +24,12 @@ iconsaxo = pygame.image.load("images/iconsaxo.jpg")
 screen.blit(iconsaxo, (1180, 160))
 iconwood = pygame.image.load("images/iconwood.jpg")
 iconnature = pygame.image.load("images/iconnature.jpg")
-screen.blit(iconwood, (1050, 500))
-screen.blit(iconnature, (1200, 500))
+screen.blit(iconwood, (1050, 510))
+screen.blit(iconnature, (1200, 510))
+icondrum = pygame.image.load("images/icondrum.jpg")
+screen.blit(icondrum, (1050, 320))
+screen.blit(icondrum, (1120, 320))
+screen.blit(icondrum, (1190, 320))
 pygame.display.flip()
 
 #couleurs = (rouge, vert, bleu)
@@ -306,11 +310,11 @@ def message(texte):
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
    
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionFond, TexteExplicatif)
-   TexteExplicatifRect.center = 1150, 450
+   TexteExplicatifRect.center = 1150, 460
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
    
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(ComFond, TexteExplicatif)
-   TexteExplicatifRect.center = 1150, 480
+   TexteExplicatifRect.center = 1150, 490
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
    
    pygame.display.update()
