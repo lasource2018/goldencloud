@@ -332,6 +332,7 @@ while running == True:
 
       keydown()
       keyup()
+      pygame.init()
       for event in pygame.event.get() :
          if event.type == KEYDOWN :
             if event.key == K_v :
@@ -365,6 +366,7 @@ while running == True:
             pygame.quit()
       keydown()
       keyup()
+      pygame.init()
       for event in pygame.event.get() :
          if event.type == KEYDOWN :
             if event.key == K_c :
