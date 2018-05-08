@@ -24,12 +24,16 @@ iconsaxo = pygame.image.load("images/iconsaxo.jpg")
 screen.blit(iconsaxo, (1180, 160))
 iconwood = pygame.image.load("images/iconwood.jpg")
 iconnature = pygame.image.load("images/iconnature.jpg")
-screen.blit(iconwood, (1050, 510))
-screen.blit(iconnature, (1200, 510))
+screen.blit(iconwood, (1050, 310))
+screen.blit(iconnature, (1200, 310))
 icondrum = pygame.image.load("images/icondrum.jpg")
-screen.blit(icondrum, (1050, 320))
-screen.blit(icondrum, (1120, 320))
-screen.blit(icondrum, (1190, 320))
+screen.blit(icondrum, (1050, 430))
+screen.blit(icondrum, (1120, 430))
+screen.blit(icondrum, (1190, 430))
+iconplay = pygame.image.load("images/iconplay.jpg")
+iconstop = pygame.image.load("images/iconstop.jpg")
+screen.blit(iconplay, (1080, 530))
+screen.blit(iconstop, (1180, 530))
 pygame.display.flip()
 
 #couleurs = (rouge, vert, bleu)
@@ -281,17 +285,17 @@ def message(texte):
    screen.blit(GrosTexteSurf, GrosTexteRect)
 
    
-   PetitTexteSurf, PetitTexteRect = creaTexteObj("Appuyez sur une touche pour découvrir votre clavier...", PetitTexte)
+   PetitTexteSurf, PetitTexteRect = creaTexteObj("Cherchez votre clavier en appuyant sur des touches ...", PetitTexte)
    PetitTexteRect.center = 500, 480
    screen.blit(PetitTexteSurf, PetitTexteRect)
 
 
    InstructionInstrument = "Choisissez votre instrument :" 
-   ComInstrument = "C                                  V"
-   InstructionSon = "Plus fort :          Moins Fort : " 
-   ComSon = "W                                  X"
+   ComInstrument = "Tapez C                    Tapez V"
+   InstructionDrum = "Cliquez pour une boite à rythme "
+   PlayStop = "Play                Stop"
    InstructionFond = "Changez le fond :"  
-   ComFond = "B                                 N"
+   ComFond = "Tapez B                   Tapez N"
    
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionInstrument, TexteExplicatif)
    TexteExplicatifRect.center = 1150, 100
@@ -301,20 +305,20 @@ def message(texte):
    TexteExplicatifRect.center = 1150, 130
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
    
-   TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionSon, TexteExplicatif)
-   TexteExplicatifRect.center = 1150, 325
+   TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionDrum, TexteExplicatif)
+   TexteExplicatifRect.center = 1150, 400
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
    
-   TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(ComSon, TexteExplicatif)
-   TexteExplicatifRect.center = 1150, 355
+   TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(PlayStop, TexteExplicatif)
+   TexteExplicatifRect.center = 1150, 505
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
    
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(InstructionFond, TexteExplicatif)
-   TexteExplicatifRect.center = 1150, 460
+   TexteExplicatifRect.center = 1150, 260
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
    
    TexteExplicatifSurf, TexteExplicatifRect = creaTexteObj(ComFond, TexteExplicatif)
-   TexteExplicatifRect.center = 1150, 490
+   TexteExplicatifRect.center = 1150, 290
    screen.blit(TexteExplicatifSurf, TexteExplicatifRect)
    
    pygame.display.update()
