@@ -407,12 +407,13 @@ while running == True:
          if event.type == KEYDOWN :
             if event.key == K_v :
                instrument = 1
+         #l'évènement correspond à l'appui du bouton gauche de la souris
          if event.type == MOUSEBUTTONDOWN and event.button == 1 :
             boitesamusique()
          if event.type == QUIT: 
             instrument = 3
          keydown()
-         
+      #on défini les sons du piano qui vont prendre place si instrument == 0
       do = pygame.mixer.Sound("sons/Piano/1Do.wav")
       reb = pygame.mixer.Sound("sons/Piano/2Reb.wav")
       re = pygame.mixer.Sound("sons/Piano/3Re.wav")
@@ -447,7 +448,7 @@ while running == True:
          if event.type == QUIT: 
             instrument = 3
          keydown()
-         
+      #on défini les sons du saxophone qui vont prendre place si instrument == 1
       do = pygame.mixer.Sound("sons/Saxo/1Do.wav")
       reb = pygame.mixer.Sound("sons/Saxo/2Reb.wav")
       re = pygame.mixer.Sound("sons/Saxo/3Re.wav")
