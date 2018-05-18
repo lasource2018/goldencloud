@@ -59,9 +59,6 @@ BLACK = (0, 0, 0)
 DARKGREY = (111, 111, 111)
 LIGHTGREY = (190, 190, 190)
 
-
-#pygame.draw.rect(screen, COULEUR, (x, y, longueur, hauteur)
-
  
 #titre de la fenetre et image
 pygame.display.set_caption("GoldenCloud")
@@ -104,10 +101,13 @@ def keydown():
          pygame.draw.rect(screen, LIGHTGREY, (50, 50, 50, 150), 0)#DO
          pygame.draw.rect(screen, LIGHTGREY, (50, 200, 70, 50), 0)
          pygame.display.flip()
-      if event.key == K_w: 
+      if event.key == K_w: #si la touche appuyée est le w
+         #lancement du son de la note de ré
          re.play()
+         #pygame.draw.rect(screen, COULEUR, (x, y, longueur, hauteur), bordure) cela crée un rectangle
          pygame.draw.rect(screen, LIGHTGREY, (140, 50, 35, 150), 0)#RE
-         pygame.draw.rect(screen, LIGHTGREY, (125, 200, 70,50),0)
+         pygame.draw.rect(screen, LIGHTGREY, (125, 200, 70,50),0) 
+         #pygame.display.flip() permet d'actualiser notre interface
          pygame.display.flip()
       if event.key == K_e:
          mi.play()
@@ -307,12 +307,13 @@ def keydown():
 
 
 def creaTexteObj(texte, Police):
+   #variable qui défini à quoi va ressembler notre police
    texteSurface = Police.render(texte, True, WHITE)
    return texteSurface, texteSurface.get_rect()
 
 
    
-def message(texte):
+def message(texte): #fonction qui va définir quel police choisir pour un message
    #on établit les polices d'écriture
    Titre = pygame.font.Font('police/TitilliumWeb-SemiBold.ttf', 40)
    GrosTexte = pygame.font.Font('police/TitilliumWeb-SemiBold.ttf', 130)
@@ -370,17 +371,24 @@ def affichageTexte():
 
 
 
-def boitesamusique () :
+def boitesamusique () : #fonction pour les boutons correspondant aux paramètres de la boîte à rythme
+   #event.pos[0] correspond au x et event.pos[1] correspond au y
+   #x et y sont les coordonnées pour définir les positions des surface où cliquer
    if 1120<event.pos[0]<1170 and 430<event.pos[1]<480 :
+      #si on clique à l'endroit qui correspond à la position x y alors la musique se lance avec un volume défini
       pygame.mixer.music.play()
       pygame.mixer.music.set_volume(0.6)
    if 1080<event.pos[0]<1120 and 530<event.pos[1]<570 :
+      #la boîte à musique se lance
       pygame.mixer.music.unpause()
    if 1180<event.pos[0]<1220 and 530<event.pos[1]<570 :
+      #la boîte à musique se met en pause
       pygame.mixer.music.pause()
    if 1050<event.pos[0]<1093 and 440<event.pos[1]<473 :
+      #on défini le volume à 0,5 qui est bas
       pygame.mixer.music.set_volume(0.5)
    if 1195<event.pos[0]<1238 and 440<event.pos[1]<474 :
+      #on défini le volume à 1 qui est le maximum
       pygame.mixer.music.set_volume(1)
 
 
